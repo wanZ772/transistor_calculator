@@ -5,6 +5,9 @@ function thevenin_resistance(R1, R2)    {
     return 1/(1/R1 + 1/R2);
 }
 function calc() {
+    rbb = parseFloat(document.getElementById("rbb").value); rce = parseFloat(document.getElementById("rce").value);
+    Vt = parseFloat(document.getElementById("Vt").value);
+    RL = parseFloat(document.getElementById("RL").value);
     beta = parseFloat(document.getElementById("beta").value);
     Vbe = parseFloat(document.getElementById("Vbe").value);
     Rb1 = parseFloat(document.getElementById("Rb1").value);
@@ -30,6 +33,12 @@ function calc() {
     Ve = Ie*Re;
     Vb = Vbe + Ie*Re;
     Vce = Vcc - Ic*Rc - Ie*Re;
+
+    re = Vt/Ie;
+    rpi = beta*re;
+
+    Zin = 1/(1/Rb + 1/(rbb+rpi));
+    Zout = 1/(1/rce + 1/Rc + 1/RL);
     
     document.getElementById("Ib_value").innerHTML = Ib + "A";
     document.getElementById("Ic_value").innerHTML = Ic + "A";

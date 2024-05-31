@@ -65,6 +65,37 @@ button  {
     font-size: 40px;
 }
 
+#RL_label  {
+    position: absolute;
+    right: 20%;
+    font-size: 40px;
+}
+
+#Vt_label  {
+    position: absolute;
+    right: 20%;
+    top: 4%;
+    font-size: 40px;
+}
+
+#Vt {
+    width: 120px;
+}
+
+#rbb_label  {
+    position: absolute;
+    left: 20%;
+    top: 4%;
+    font-size: 40px;
+}
+
+#rce_label  {
+    position: absolute;
+    left: 0%;
+    top: 4%;
+    font-size: 40px;
+}
+
 #credit_developer   {
     position: absolute;
     justify-content: center;
