@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="function.js"></script>
+    </head>
+    <body>
+        <label id="beta_label">Beta: <input inputmode="numeric" class="input_box" id="beta" placeholder="Beta" value=200></input></label>
+        <label id="Vbe_label">Vbe: <input inputmode="numeric" class="input_box" id="Vbe" placeholder="Vbe" value=0.7></input></label>
+        <input class="input_box" id="vcc" placeholder="Vcc" inputmode="numeric"></input>
+        <input class="input_box" id="Rb1" placeholder="Rb1" inputmode="numeric"></input>
+        <input class="input_box" id="Rb2" placeholder="Rb2" value=0 inputmode="numeric"></input>
+        <input class="input_box" id="Rc" placeholder="Rc" inputmode="numeric"></input>
+        <input class="input_box" id="Re" placeholder="Re" inputmode="numeric"></input>
+
+        <button onclick="calc()">Calculate</button>
+        
+            <!-- <h2 id="credit_developer">Developed by Code</h2> -->
+            
+<div class="dc_result">
+        <text >Ib: <text id="Ib_value">Null</text></text>
+        <br>
+        <text>Ic: <text id="Ic_value">Null</text></text>
+        <br>
+        <text>Ie: <text id="Ie_value">Null</text></text>
+        <br>
+        <text>Vb: <text id="Vb_value">Null</text></text>
+        <br>
+        <text>Vc: <text id="Vc_value">Null</text></text>
+        <br>
+        <text>Ve: <text id="Ve_value">Null</text></text>
+        <br>
+        <text>Vce: <text id="Vce_value">Null</text></text>
+        <br>
+        </div>
+    </body>
+</html>

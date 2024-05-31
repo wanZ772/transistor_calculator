@@ -1,0 +1,74 @@
+body    {
+    background-image: url("transistor.png");
+    background-size:contain ;
+    background-repeat: no-repeat;
+    background-position:top ;
+}
+.input_box  {
+    background-color: bisque;
+    height: 50px;
+    width: 70px;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    
+}
+
+#Rb1 {
+    top: 18%;
+    left: 10%;
+}
+#Rb2 {
+    top: 43%;
+    left: 9%;
+}
+#Rc {
+    top: 17%;
+    right: 9%;
+}
+
+#Re {
+    top: 43.5%;
+    right: 9%;
+}
+
+#Vcc    {
+    left: 55%;
+}
+
+button  {
+    position:absolute;
+    top: 65%;
+    left: 38.5%;
+    height: 100px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.dc_result    {
+    position:absolute;
+    padding-bottom: 10px;
+    font-size: 40px;
+    bottom: 0%;
+}
+
+#beta_label  {
+    position: absolute;
+    left: 0%;
+    font-size: 40px;
+}
+
+#Vbe_label  {
+    position: absolute;
+    left: 20%;
+    font-size: 40px;
+}
+
+#credit_developer   {
+    position: absolute;
+    justify-content: center;
+    bottom: 20%;
+    font-size: 50px;
+    left: 30%;
+}
