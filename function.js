@@ -4,6 +4,20 @@ function thevenin_voltage(R1, R2, Vcc) {
 function thevenin_resistance(R1, R2)    {
     return 1/(1/R1 + 1/R2);
 }
+
+function ac_analysis(rbb, rce, RL)  {
+    re = Vt/Ie;
+    rpi = beta*re;
+
+    Zin = 1/(1/Rb + 1/(rbb+rpi));
+    Zout = 1/(1/rce + 1/Rc + 1/RL);
+
+    document.getElementById("re_value").innerHTML = re + "&ohm;";
+    document.getElementById("rpi_value").innerHTML = rpi + "&ohm;";
+    document.getElementById("zin_value").innerHTML = Zin + "&ohm;";
+    document.getElementById("zout_value").innerHTML = Zout + "&ohm;";
+}
+
 function calc() {
     rbb = parseFloat(document.getElementById("rbb").value); rce = parseFloat(document.getElementById("rce").value);
     Vt = parseFloat(document.getElementById("Vt").value);
@@ -34,19 +48,26 @@ function calc() {
     Vb = Vbe + Ie*Re;
     Vce = Vcc - Ic*Rc - Ie*Re;
 
-    re = Vt/Ie;
-    rpi = beta*re;
+    
+    
+    document.getElementById("Ib_value").innerHTML = Ib.toExponential() + "A";
+    document.getElementById("Ic_value").innerHTML = Ic.toExponential() + "A";
+    document.getElementById("Ie_value").innerHTML = Ie.toExponential() + "A";
+    
+    document.getElementById("Vb_value").innerHTML = Vb.toExponential() + "V";
+    document.getElementById("Vc_value").innerHTML = Vc.toExponential() + "V";
+    document.getElementById("Ve_value").innerHTML = Ve.toExponential() + "V";
+    document.getElementById("Vce_value").innerHTML = Vce.toExponential() + "V";
 
-    Zin = 1/(1/Rb + 1/(rbb+rpi));
-    Zout = 1/(1/rce + 1/Rc + 1/RL);
+
+    if (rbb != 0 && rce != 0 && RL != 0)    {
+        ac_analysis(rbb, rce, RL);
+    }   else    {
+        document.getElementById("re_value").innerHTML = "Null";
+    document.getElementById("rpi_value").innerHTML = "Null";
+    document.getElementById("zin_value").innerHTML = "Null";
+    document.getElementById("zout_value").innerHTML = "Null";
+    }
     
-    document.getElementById("Ib_value").innerHTML = Ib + "A";
-    document.getElementById("Ic_value").innerHTML = Ic + "A";
-    document.getElementById("Ie_value").innerHTML = Ie + "A";
-    
-    document.getElementById("Vb_value").innerHTML = Vb + "V";
-    document.getElementById("Vc_value").innerHTML = Vc + "V";
-    document.getElementById("Ve_value").innerHTML = Ve + "V";
-    document.getElementById("Vce_value").innerHTML = Vce + "V";
 
 }
